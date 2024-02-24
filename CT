@@ -1,0 +1,66 @@
+getgenv().Auto = true print("exe")
+ while task.wait(5) do 
+ if Auto == true then 
+if game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui.ChallengeDetails.Time.Text == "SURVIVE FOR: 02:05" or game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui.ChallengeDetails.Time.Text == "SURVIVE FOR: 02:04" or game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui.ChallengeDetails.Time.Text == "SURVIVE FOR: 02:03" or game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui.ChallengeDetails.Time.Text == "SURVIVE FOR: 02:02" or game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui.ChallengeDetails.Time.Text == "SURVIVE FOR: 02:01" or game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui.ChallengeDetails.Time.Text == "SURVIVE FOR: 02:00" or game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui.ChallengeDetails.Time.Text == "SURVIVE FOR: 01:59" or game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui.ChallengeDetails.Time.Text == "SURVIVE FOR: 01:58" then
+for i,v in pairs(workspace.Towers:GetChildren()) do 
+ if v:IsA("Model") then
+--print(tostring(v:GetAttribute("Id")))
+local args = {
+    [1] = {
+        ["\8"] = {
+            [1] = {
+                [1] = {
+                    ["Radius"] = 9999999999999999999,
+                    ["TowerId"] = tostring(v:GetAttribute("Id")),
+                    ["Position"] = Vector3.new(-11.11607837677002, 145.6630096435547, 728.268798828125)
+                }
+            }
+        }
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteService"):WaitForChild("Handler"):FireServer(unpack(args))
+end
+end
+elseif game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui.ChallengeDetails.Time.Text == "OVERTIME" then
+ for i =1, 10 do
+for i,v in pairs(workspace.Towers:GetChildren()) do 
+ if v:IsA("Model") then
+--print(tostring(v:GetAttribute("Id")))
+local args = {
+    [1] = {
+        ["\8"] = {
+            [1] = {
+                [1] = {
+                    ["Radius"] = 9999999999999999999,
+                    ["TowerId"] = tostring(v:GetAttribute("Id")),
+                    ["Position"] = Vector3.new(-11.11607837677002, 145.6630096435547, 728.268798828125)
+                }
+            }
+        }
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteService"):WaitForChild("Handler"):FireServer(unpack(args))
+end
+end
+end
+wait(2)
+getgenv().Auto = false
+local args = {
+    [1] = {
+        ["\6"] = {
+            [1] = {
+                [1] = "Replay"
+            }
+        }
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteService"):WaitForChild("Handler"):FireServer(unpack(args))
+end
+ else 
+wait()
+break
+end
+end
